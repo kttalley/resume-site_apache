@@ -1,20 +1,27 @@
-<html><head>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&amp;display=swap" rel="stylesheet">
+  <meta name="description" content="Kristian Talley's portfolio site, showcasing product design and web development work.">
+  <title>Kristian Talley - Designer and Developer</title>
+
+  <link rel="icon" href="https://cdn.myportfolio.com/b13fd238e2a14d02d9698b0b63c83e82/ea9a6961-894b-49a6-87d7-b050633238bc_carw_1x1x32.jpg?h=fb595c562f54fadf3f06990dcdfaec00" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZX4410GSD3"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX4410GSD3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-
     gtag('config', 'G-ZX4410GSD3');
   </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
   <script>
     new p5();
@@ -29,10 +36,9 @@
         clear(); 
         counter = 10; 
         startTime = currentTime; 
-      }
-      else {
+      } else {
         counter = counter + 2;
-        background(0,32);
+        background(0, 32);
         stroke(255, 100);
         noFill();
         drawCircle(width / 2, height / 2, counter);
@@ -41,51 +47,21 @@
 
     function drawCircle(x, y, d) {
       ellipse(x, y, d, d);
-
-
       if (d > 10) {
         drawCircle(x - d / 2, y, d / 2);
         drawCircle(x + d / 2, y, d / 2);
         drawCircle(x, y + d / 2, d / 2);
-        // drawCircle(x,y-d/2, d/2);
+        // drawCircle(x, y - d / 2, d / 2);
       }
     }
   </script>
 
-</head>
-
-
-<body>
-
   <style>
     * {
       background-color: black;
-    }
-
-
-    img {
-      max-width: 500px;
-      border-radius: 32px;
-
-    }
-    h1 {
-      color: white;
-    }
-    canvas {
-      min-width: 100%;
-    }
-
-    #canvas-container {
-      display: block;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    #p5-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -93,112 +69,78 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      padding: 0;
-    }
-    .logo {
-	display: block;
-	top: 0;
-	left: 0;
-    }
-    .logo h2 {
-      font-size: 36px;
       font-family: 'Lato', sans-serif;
+      overflow: hidden;
+    }
+
+    .logo {
       position: absolute;
-      color: white;
-      padding: 2rem;
-      margin: 1rem;
       top: 0;
       left: 0;
-      font-weight: 100;
-      font-style: thin;
-      background-color: transparent;
-    }
-    .logo h4{
-	font-size: 24px;
-      font-family: 'Lato', sans-serif;
-      position: absolute;
-      color: white;
       padding: 2rem;
-      margin: 1rem;
-      top: 64px;
-      left: 0;
-      font-weight: 100;
-      font-style: thin;
-      background-color: transparent;
-
     }
-    @media (max-width: 378px) {
-	    .logo h4{
-		    top: 92px;
-	    }
-}
-    .cta {
+    
+    .logo h2,
+    .logo h3 {
+      color: white;
+      margin: 0;
+      background-color: transparent;
+    }
+
+    .logo h2 {
+      font-size: 2.25rem;
+      font-weight: 200;
+    }
+
+    .logo h3 {
+      font-size: 1.5rem;
+      font-weight: 200;
+      margin-top: 0.5rem;
+    }
+
+    .announcement {
       position: absolute;
       top: 50%;
       left: 50%;
+      transform: translate(-50%, -50%);
       display: flex;
       justify-content: center;
       align-items: center;
-      transform: translate(-50%, -50%);
-      padding-left: 0.4rem;
-      padding-right: 0.4rem;
-      border-radius: 64px;
-      background-color: transparent;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 2px solid rgba(200, 48, 255, 0.6);
+      backdrop-filter: blur(32px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
     }
-    .cta h1 {
-      background-color: rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 2rem 3rem 2rem 2rem;
-      border-radius: 64px;
-      font-family: menlo, sans-serif;
-      font-size: 2rem;
-      border: 4px solid black;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.66);
-    }
-    .cta h1:hover {
-      transform: scale(1.1);
-      cursor: pointer;
-      filter: brightness(1.1);
-    }
-    .cta svg {
-      background-color: transparent;
-      padding: 0.2rem;
-      position: absolute;
 
+    .announcement h1 {
+      font-size: 1.6rem;
+      font-family: Menlo, sans-serif;
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+    }
+
+    
+    @media (max-width: 378px) {
+      .logo h3 {
+        top: 92px;
+      }
     }
   </style>
-<div class="logo">
-    <h2>KRISTIAN TALLEY</h2>
-    <h4>Designer and Developer</h4>
-  </div>
-  <a href="./projects/index.html">
+</head>
 
-    <div class="cta">
-
-      <h1>welcome<svg width="42px" height="42px" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g filter="url(#filter0_d_9_2)">
-            <path d="M8.56 7.93076C8.56 5.48095 11.2003 3.93973 13.3335 5.14435L24.0732 11.2091C26.2402 12.4328 26.2422 15.5533 24.0768 16.7799L13.3371 22.8629C11.2039 24.0712 8.56 22.5302 8.56 20.0786L8.56 7.93076Z" fill="white" fill-opacity="0.8" shape-rendering="crispEdges"></path>
-          </g>
-          <defs>
-            <filter id="filter0_d_9_2" x="0.559998" y="0.726074" width="33.1396" height="34.5572" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-              <feOffset dy="4"></feOffset>
-              <feGaussianBlur stdDeviation="4"></feGaussianBlur>
-              <feComposite in2="hardAlpha" operator="out"></feComposite>
-              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
-              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_2"></feBlend>
-              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_2" result="shape"></feBlend>
-            </filter>
-          </defs>
-        </svg>
-      </h1>
-
-
+<body>
+  <a href="https://www.linkedin.com/in/kristian-talley">
+    <div class="logo">
+      <h2>KRISTIAN TALLEY</h2>
+      <h3>Designer and Developer</h3>
     </div>
   </a>
 
-
-<canvas id="defaultCanvas0" width="2504" height="1508" style="width: 1252px; height: 754px;"></canvas></body></html>
+  <div class="announcement">
+    <h1>New portfolio app in progress, check back soon.</h1>
+  </div>
+</body>
+</html>
