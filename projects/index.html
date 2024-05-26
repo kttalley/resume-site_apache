@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kristian Talley's JavaScript Sketches</title>
+    <meta name="description" content="Explore Kristian Talley's collection of JavaScript sketches.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX4410GSD3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZX4410GSD3');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #FF6E6E;
+            color: white;
+            font-family: 'Menlo', sans-serif;
+        }
+         a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem 0;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .logo h2, .logo h3 {
+            margin: 0;
+            font-weight: 1000;
+            text-align: center;
+        }
+
+        .logo h2 {
+            font-size: 2.25rem;
+        }
+
+        .logo h3 {
+            font-size: 1.5rem;
+        }
+
+        .heading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.6rem;
+            text-align: center;
+            color: white;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 1rem;
+        }
+
+        #project-list {
+            background-image: url('https://design.kristiantalley.com/ktt-cloud/art/tumblr_ldpb70LZVj1qfchfvo1_r3_1280.jpg');
+            background-size: cover;
+            width: 92vw;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px 20px rgba(0, 0, 0, 0.62);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #project-list li {
+            line-height: 300%;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        #project-list a {
+            margin: 1rem;
+            padding: 1.6rem;
+            font-size: 1.8rem;
+            min-width: 66vw;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 16px;
+            background-color: rgba(24, 24, 24, 0.6);
+            backdrop-filter: blur(16px);
+            border: 2px solid #FF6E6E;
+            color: white;
+            box-shadow: 0 10px 30px 20px rgba(0, 0, 0, 0.62);
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        #project-list a:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+    </style>
+    <script>
+      // List of project filenames (replace with your actual filenames)
+      const fileNames = ['rhubarb-ds', 'hacktober23/slitscan-time-displacement-effect/', 'magnifying-glass-cursor--react','star-painter','random-3d-walker']; 
+
+      window.addEventListener('DOMContentLoaded', () => {
+        const projectList = document.getElementById('project-list');
+
+        fileNames.forEach(fileName => {
+          const listItem = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = fileName; // Set the link URL to the file
+          link.textContent = fileName; // Display the file name
+          listItem.appendChild(link);
+          projectList.appendChild(listItem);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="https://design.kristiantalley.com">
+    <div class="logo">
+      <h2>KRISTIAN TALLEY</h2>
+      <h3>Designer and Developer</h3>
+    </div>
+  </a>
+          <div class="heading-container">
+                <h1>Hey there, check out some of my JavaScript sketches below.</h1>
+          </div>
+    <div>
+      <ul id="project-list">
+        <!-- List items will be dynamically added here -->
+
+      </ul>
+    </div>
+  </body>
+</html>
+~                 

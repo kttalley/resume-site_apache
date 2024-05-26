@@ -1,0 +1,30 @@
+<!DOCTYPE HTML><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Kristian Talley's portfolio site, showcasing product design and web development work."><title>Kristian Talley - Designer and Developer</title><link rel="icon" href="https://cdn.myportfolio.com/b13fd238e2a14d02d9698b0b63c83e82/ea9a6961-894b-49a6-87d7-b050633238bc_carw_1x1x32.jpg?h=fb595c562f54fadf3f06990dcdfaec00" type="image/x-icon"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX4410GSD3"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-ZX4410GSD3")</script><script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script><script>new p5();
+    function setup() {
+      createCanvas(window.windowWidth, window.windowHeight, P2D);
+      startTime = millis();
+    }
+    let counter = 10;
+    function draw() {
+      let currentTime = millis();
+      if (currentTime - startTime >= 60000) { 
+        clear(); 
+        counter = 10; 
+        startTime = currentTime; 
+      } else {
+        counter = counter + 2;
+        background(0, 32);
+        stroke(255, 100);
+        noFill();
+        drawCircle(width / 2, height / 2, counter);
+      }
+    }
+
+    function drawCircle(x, y, d) {
+      ellipse(x, y, d, d);
+      if (d > 10) {
+        drawCircle(x - d / 2, y, d / 2);
+        drawCircle(x + d / 2, y, d / 2);
+        drawCircle(x, y + d / 2, d / 2);
+        // drawCircle(x, y - d / 2, d / 2);
+      }
+    }</script><style>*{background-color:#000;margin:0;padding:0;box-sizing:border-box}body{display:flex;justify-content:center;align-items:center;height:100vh;font-family:Lato,sans-serif;overflow:hidden}.logo{position:absolute;top:0;left:0;padding:2rem}.logo h2,.logo h3{color:#fff;margin:0;background-color:transparent}.logo h2{font-size:2.25rem;font-weight:200}.logo h3{font-size:1.5rem;font-weight:200;margin-top:.5rem}.announcement{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;justify-content:center;align-items:center;background-color:rgba(0,0,0,.9);padding:2rem;border-radius:1rem;border:2px solid rgba(200,48,255,.6);backdrop-filter:blur(32px);box-shadow:0 10px 20px rgba(0,0,0,.8)}.announcement h1{font-size:1.6rem;font-family:Menlo,sans-serif;font-weight:100;color:rgba(255,255,255,.8);margin:0}@media (max-width:378px){.logo h3{top:92px}}</style></head><body><a href="https://www.linkedin.com/in/kristian-talley"><div class="logo"><h2>KRISTIAN TALLEY</h2><h3>Designer and Developer</h3></div></a><div class="announcement"><h1>New portfolio app in progress, check back soon.</h1></div></body></html>
