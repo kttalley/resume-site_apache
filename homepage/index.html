@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#000">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Kristian Talley's portfolio site, showcasing product design and web development work.">
   <title>Kristian Talley - Designer and Developer</title>
@@ -74,8 +75,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 108vh;
       font-family: 'Lato', sans-serif;
+      background-color: #000
       /* overflow: hidden; */
     }
 
@@ -84,18 +86,19 @@
       top: 0;
       left: 0;
       padding: 2rem;
-      outline: solid white;
+      outline: solid 2px white;
       font-family: Inconsolata, monospace;
       border-radius: 0 0 0.5rem 0;
       transition:  400ms ease-in-out;
-      /* background-color: black; */
-      background: linear-gradient(144deg, rgba(2,0,36,1) 57%, rgba(10,4,10,0.6) 100%);
+      background-color: rgba(0,0,0,0.9);
+      backdrop-filter: blur(12px);
+      /* background: linear-gradient(144deg, rgba(2,0,36,1) 80%, rgba(200,42,250,0.4) 100%); */
       z-index: 9999;
     }
     .logo:hover {
       scale:calc(1.1);
       /* background-color: purple; */
-      background: linear-gradient(144deg, rgba(2,0,36,1) 57%, rgba(200,42,250,0.6) 100%);
+      background: linear-gradient(144deg, rgba(2,0,36,1) 57%, #c82afa99 100%);
        }
     
     .logo h2,
@@ -148,7 +151,7 @@ background: linear-gradient(144deg, rgba(2,0,36,1) 57%, rgba(200,42,250,0.6) 100
     .headline {
       
       position: absolute;
-      margin-top:6vh;
+      margin-top:1rem;
       margin-bottom: 4rem;
       top: 50%;
       left: 50%;
@@ -157,12 +160,12 @@ background: linear-gradient(144deg, rgba(2,0,36,1) 57%, rgba(200,42,250,0.6) 100
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.9);
       background: linear-gradient(1233.59deg at 3035px 3281.5px, #C830FF 0%, #C830FF 100%);
       padding: 2rem;
       border-radius: 1rem;
       border: 2px solid rgba(245, 48, 255, 0.6);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
        background-blend-mode: multiply; /* Combine the glassmorphic background with other elements */
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
       min-width:fit-content;
@@ -259,8 +262,8 @@ box-shadow: 0 0px 40px rgba(255, 48, 255, 0.6);
 
 @media (max-width: 819px) {
        .headline {
-        min-width: 92%;
-        margin-top: 2vh;
+        max-width: 92%;
+        margin-top: 1.5rem;
         gap: 0.4rem;
         justify-content: center;
         text-align: center;
@@ -286,7 +289,7 @@ box-shadow: 0 0px 40px rgba(255, 48, 255, 0.6);
         @media (max-width: 540px) {
        .headline {
         min-width: 92%;
-        margin-top: 4vh;
+        margin-top: 2rem;
         gap: 0.1rem;
         
        }
@@ -301,7 +304,7 @@ box-shadow: 0 0px 40px rgba(255, 48, 255, 0.6);
     @media (max-width: 380px) {
        .headline {
         min-width: 92%;
-        margin-top: 12vh;
+        margin-top: 8rem;
         /* padding-top: 1rem; */
         gap: 0.1rem;
         align-items: center;
@@ -315,10 +318,10 @@ box-shadow: 0 0px 40px rgba(255, 48, 255, 0.6);
       
     }
 
-     @media (max-width: 320px) {
+     @media (max-width: 330px) {
        .headline {
         min-width: 92%;
-        margin-top: 8vh;
+        margin-top: 12rem;
         gap: 0.1rem;
         align-items: center;
         justify-content: center;
@@ -330,7 +333,7 @@ box-shadow: 0 0px 40px rgba(255, 48, 255, 0.6);
      @media (max-width: 310px) {
        .headline {
         min-width: 92%;
-        margin-top: 16vh;
+        margin-top: 14rem;
         gap: 0.1rem;
         align-items: center;
         justify-content: center;
