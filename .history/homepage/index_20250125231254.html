@@ -30,11 +30,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-
-    }
-
-    html {
-      overflow-x: hidden;
+      overflow-x: none;
     }
 
     canvas {
@@ -70,9 +66,7 @@
       max-width: 100%;
       overflow-x: hidden;
       font-family: Lato, sans-serif;
-      background-color: #000;
-      overflow-x: none;
-
+      background-color: #000
     }
 
     .logo {
@@ -249,13 +243,13 @@
     @media (max-width:950px) {
       .headline {
         min-width: 92%;
-        margin-top: 8rem
+        margin-top: 7.2rem
       }
 
       @media (max-width:819px) {
         .headline {
           min-width: 92%;
-          margin-top: 10rem;
+          margin-top: 8rem;
           gap: .4rem;
           justify-content: center;
           text-align: center
@@ -288,30 +282,19 @@
       @media (max-width:540px) {
         .headline {
           min-width: 92%;
-          margin-top: 12rem;
+          margin-top: 10rem;
           gap: .1rem
         }
 
         .headline h1 {
           padding: 0
         }
-
-        .pause-play-btn {
-          display: flex;
-          justify-content: center;
-          margin-right: 75%;
-          bottom: 80px;
-          margin-bottom: 24px;
-
-
-        }
-
       }
 
       @media (max-width:397px) {
         .headline {
           min-width: 92%;
-          margin-top: 16rem;
+          margin-top: 12rem;
           gap: .1rem;
           align-items: center;
           border-radius: 16px;
@@ -323,14 +306,12 @@
         }
 
 
-
-
       }
 
       @media (max-width:330px) {
         .headline {
           min-width: 92%;
-          margin-top: 16rem;
+          margin-top: 12rem;
           gap: .1rem;
           align-items: center;
           justify-content: center
@@ -340,7 +321,7 @@
       @media (max-width:310px) {
         .headline {
           min-width: 92%;
-          margin-top: 16rem;
+          margin-top: 12rem;
           gap: .1rem;
           align-items: center;
           justify-content: center
@@ -364,25 +345,18 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: ease-in-out 0.6s;
+      transition: ease-in-out 0.8s;
     }
 
     .pause-play-btn:hover {
-      transition: ease-in-out 0.2s;
+      transition: ease-in-out 0.8s;
       text-wrap: none;
-      background: rgba(245, 48, 255);
-      color: #000;
-      outline: 0;
-      font-weight: 800;
-      box-shadow: 0 0 40px rgba(255, 48, 255, .6)
+
+
     }
 
     #make-it-happen {
-      outline: solid 2px rgba(245, 245, 245, .6);
-      box-shadow: 0 0 40px rgba(255, 48, 255, .8);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      outline: solid 2px rgba(255, 48, 255, .6);
       display: flex;
       border: none;
       cursor: pointer;
@@ -390,6 +364,7 @@
       font-family: Inconsolata, monospace;
       background: linear-gradient(1233.59deg at 3035px 3281.5px, #c830ff 0, #c830ff 100%);
       color: #fff;
+      outline: solid 2px rgba(255, 48, 255, .6);
       display: flex;
       border: none;
       cursor: pointer;
@@ -397,20 +372,9 @@
       font-family: Inconsolata, monospace;
       padding: .4rem 1rem;
       white-space: nowrap;
-      border-radius: 8px;
+      border-radius: 16px;
       transition: .2s ease-in-out;
-      text-decoration: none;
-      margin-top: 32px;
-      margin-bottom: 16px;
-      padding: 1rem;
-    }
-
-    #make-it-happen:hover {
-      background: rgba(245, 48, 255);
-      color: #000;
-      outline: 0;
-      font-weight: 800;
-      box-shadow: 0 0 40px rgba(255, 48, 255, .6)
+      text-decoration: none
     }
   </style>
 </head>
@@ -428,29 +392,28 @@
       </div>
     </nav>
     <h1 role="heading" style="margin-top: 24px; margin-bottom: 24px;">I'm a designer with a passion for teaching
-      javascript and generative
-      design</h1><a style="border-radius: 40px" role="link" href="https://www.linkedin.com/in/kristian-talley"
+      JavaScript and generative
+      design.</h1><a style="border-radius: 40px" role="link" href="https://www.linkedin.com/in/kristian-talley"
       target="_blank">
       <div aria-label="image frame" id="my-mug"><img role="img" src="./ktt.png" alt="the site's author Kristian Talley">
       </div>
     </a>
     <p aria-label="Kristian Talley's current job title and details." id="work-details">I
-      create immersive instructional experiences and craft engaging products
-      for users around the globe. I currently work at Cisco.</p>
+      craft immersive instructional experiences and engaging products
+      for a global audience. I currently work at Cisco.</p>
     <p id="lets-talk">Have an idea you'd like to build?</p>
-    <a id="make-it-happen" role="button" aria-label="email Kristian Talley" href="mailto:talleykristian@gmail.com"
-      target="_blank">Let's
-      make it happen 🛠️
+    <a id="make-it-happen">Let's make it happen 🛠️
     </a>
-    <div class="cta" style="margin-bottom: 48px; ">
-      <a role="link" aria-label="a gpt project by Kristian Talley" href="./api/fortune-teller-gpt">🔮
+    <div class="cta" style="margin-bottom: 48px; "><a role="link" aria-label="email Kristian Talley"
+        href="mailto:talleykristian@gmail.com">✉️ email
+        me</a> <a role="link" aria-label="a gpt project by Kristian Talley" href="./api/fortune-teller-gpt">🔮
         fortune teller gpt</a> <a role="link"
         aria-label="talk with large language models hosted on Kristian Talley's hardware"
         href="https://llm.kristiantalley.com">🦙 talk with a local llm</a> <a role="link"
         aria-label="Kristian Talley's JavaScript projects" href="./projects/index.html">📓 my javascript
         sketchbook</a><a role="link" aria-label="Kristian Talley's artwork"
         href="https://www.instagram.com/kristian.talley" target="_blank">🖼️ my artwork</a><a role="link"
-        aria-label="Kristian Talley's github" href="https://github.com/kttalley">👾 my github</a>
+        aria-label="Kristian Talley's github" href="https://github.com/kttalley">🐱 github</a>
 
     </div>
     <button class="pause-play-btn" id="pausePlayBtn">pause animation</button>
