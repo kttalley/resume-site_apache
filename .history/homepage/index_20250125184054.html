@@ -19,7 +19,36 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX4410GSD3"></script>
   <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "G-ZX4410GSD3")</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+  <script>new p5()
+    function setup() {
+      createCanvas(window.windowWidth, window.windowHeight, P2D)
+      startTime = millis()
+    }
+    let counter = 10
+    function draw() {
+      let currentTime = millis()
+      if (currentTime - startTime >= 20000) {
+        clear()
+        counter = 10
+        startTime = currentTime
+      } else {
+        counter = counter + 2
+        background(0, 32)
+        stroke(255, 100)
+        noFill()
+        drawCircle(width / 2, height / 2, counter)
+      }
+    }
 
+    function drawCircle(x, y, d) {
+      ellipse(x, y, d, d)
+      if (d > 10) {
+        drawCircle(x - d / 2, y, d / 2)
+        drawCircle(x + d / 2, y, d / 2)
+        drawCircle(x, y + d / 2, d / 2)
+        // drawCircle(x, y - d / 2, d / 2);
+      }
+    }</script>
   <style>
     root {
       font-size: 16px;
@@ -32,29 +61,19 @@
       box-sizing: border-box
     }
 
-    canvas {
-      min-width: 104%;
-      min-height: 104%;
-      aspect-ratio: 16/9;
-
+    *:focus {
+      outline: none;
+      border: 2px solid rgba(117, 255, 48, 0.6);
+      box-shadow: 0 0 5px rgba(117, 215, 0, 0.5);
+      border-radius: 24px;
+      padding: 2rem
     }
-
 
     a:focus {
       outline: none;
-      border: 2px solid rgba(117, 255, 48, 1) !important;
-      box-shadow: 0 0 5px rgba(117, 215, 0, 08) !important;
+      border: 2px solid rgba(117, 255, 48, 0.6) !important;
+      box-shadow: 0 0 5px rgba(117, 215, 0, 0.5) !important;
       border-radius: 24px;
-    }
-
-    button:focus {
-      outline: none;
-      border: 2px solid rgba(117, 255, 48, 1) !important;
-      box-shadow: 0 0 5px rgba(117, 215, 0, 08) !important;
-      bottom: 20px;
-      font-size: 1rem;
-
-
     }
 
     body {
@@ -73,16 +92,14 @@
       top: 0;
       left: 0;
       padding: 1.25rem;
-      outline: solid 1px #fff;
+      outline: solid 2px #fff;
       font-family: Inconsolata, monospace;
-      border-radius: 8px;
+      border-radius: 0 0 .5rem 0;
       transition: .4s ease-in-out;
       background-color: rgba(0, 0, 0, .9);
       backdrop-filter: blur(12px);
-      z-index: 9999;
+      z-index: 9999
     }
-
-
 
     .logo:hover {
       scale: calc(1.1);
@@ -261,13 +278,9 @@
         .logo {
           width: 100%;
           white-space: nowrap;
-          border-radius: 8px;
+          border-radius: 0;
           justify-content: center
         }
-
-
-
-
 
         #work-details {
           display: none
@@ -281,7 +294,7 @@
       @media (max-width:540px) {
         .headline {
           min-width: 92%;
-          /* margin-top: 10rem; */
+          margin-top: 10rem;
           gap: .1rem
         }
 
@@ -293,18 +306,15 @@
       @media (max-width:397px) {
         .headline {
           min-width: 92%;
-          /* margin-top: 12rem; */
+          margin-top: 12rem;
           gap: .1rem;
           align-items: center;
-          border-radius: 16px;
           justify-content: center
         }
 
         #my-mug {
           margin: 1rem
         }
-
-
       }
 
       @media (max-width:330px) {
@@ -320,150 +330,38 @@
       @media (max-width:310px) {
         .headline {
           min-width: 92%;
-          /* margin-top: 12rem; */
+          margin-top: 12rem;
           gap: .1rem;
           align-items: center;
           justify-content: center
         }
       }
     }
-
-    .pause-play-btn {
-      white-space: nowrap;
-      margin-left: 80%;
-      margin-bottom: -72px;
-      padding: 10px;
-      z-index: -9999;
-      background-color: black;
-      color: white;
-      cursor: pointer;
-      font-size: 1rem;
-      font-family: Inconsolata, monospace;
-      outline: solid 2px rgba(245, 245, 245, .6);
-      box-shadow: 0 0 40px rgba(255, 48, 255, .8);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: ease-in-out 0.8s;
-    }
-
-    .pause-play-btn:hover {
-      transition: ease-in-out 0.8s;
-      text-wrap: none;
-
-
-    }
   </style>
 </head>
 
 <body>
-  <!-- <div class="announcement">
+  <nav role="navigation" id="globalnav">
+    <div class="logo" role="heading">
+      <h2>Kristian Talley</h2>
+      <h3>designer and developer</h3>
+    </div>
+  </nav><!-- <div class="announcement">
     <h1>New portfolio app in progress, check back soon.</h1>
   </div> -->
-  <main class="headline" role="main" style="">
-    <nav role=" navigation" id="globalnav">
-      <div class="logo" aria-label="site heading with author's name and role" role="heading"
-        style="margin-top: -140px;">
-        <h2>Kristian Talley</h2>
-        <h3>designer and developer</h3>
-      </div>
-    </nav>
-    <h1 role="heading" style="margin-top: 24px; margin-bottom: 24px;">I'm a designer with a passion for teaching
-      JavaScript and generative
-      design.</h1><a style="border-radius: 40px" role="link" href="https://www.linkedin.com/in/kristian-talley"
-      target="_blank">
-      <div aria-label="image frame" id="my-mug"><img role="img" src="./ktt.png" alt="the site's author Kristian Talley">
-      </div>
+  <main class="headline" role="main">
+    <h1 role="heading">I'm a designer with a passion for teaching JavaScript and visual programming.</h1><a role="link"
+      href="https://www.linkedin.com/in/kristian-talley" target="_blank">
+      <div id="my-mug"><img role="img" src="./ktt.png" alt="the site's author Kristian Talley"></div>
     </a>
-    <p aria-label="Kristian Talley's current job title and details." id="work-details">Currently working at Cisco, I
-      craft immersive instructional experiences and engaging products
+    <p id="work-details">Currently working at Cisco, I craft immersive instructional experiences and engaging products
       for a global audience.</p>
     <p id="lets-talk">Have an idea you'd like to build together? Let's talk</p>
-    <div class="cta" style="margin-bottom: 48px; "><a role="link" aria-label="email Kristian Talley"
-        href="mailto:talleykristian@gmail.com">✉️ email
-        me</a> <a role="link" aria-label="a gpt project by Kristian Talley" href="./api/fortune-teller-gpt">🔮
-        fortune teller gpt</a> <a role="link"
-        aria-label="talk with large language models hosted on Kristian Talley's hardware"
-        href="https://llm.kristiantalley.com">🦙 talk with a local llm</a> <a role="link"
-        aria-label="Kristian Talley's JavaScript projects" href="./projects/index.html">📓 my javascript
-        sketchbook</a><a role="link" aria-label="Kristian Talley's artwork"
-        href="https://www.instagram.com/kristian.talley" target="_blank">🖼️ my artwork</a><a role="link"
-        aria-label="Kristian Talley's github" href="https://github.com/kttalley">🐱 github</a>
-
-    </div>
-    <button class="pause-play-btn" id="pausePlayBtn">pause animation</button>
+    <div class="cta"><a href="mailto:talleykristian@gmail.com">✉️ email me</a> <a href="./api/fortune-teller-gpt">🔮
+        fortune teller gpt</a> <a href="https://llm.kristiantalley.com">🦙 talk with a local llm</a> <a
+        href="./projects/index.html">📓 my javascript sketchbook</a><a href="https://github.com/kttalley">🐱 my
+        github</a> <a href="https://www.instagram.com/kristian.talley" target="_blank">🖼️ my artwork</a></div>
   </main>
-
-  <script>
-    let isPaused = false;
-    let isForward = true;
-    let startTime;
-
-    function setup() {
-      createCanvas((window.windowWidth * 1.2), (window.windowHeight * 1.2), P2D);
-      startTime = millis();
-    }
-
-    let counter = 100;
-    const minCounter = 10;
-    const maxCounter = 2000;
-
-    function draw() {
-      if (!isPaused) {
-        let currentTime = millis();
-
-        // Update counter based on direction
-        let delta = isForward ? 2 : -2;
-        counter += delta;
-
-        // Reverse direction when reaching min or max counter
-        if (counter >= maxCounter || counter <= minCounter) {
-          isForward = !isForward;
-        }
-
-        background(0, 100);
-        stroke(255, 100);
-        noFill();
-        drawCircle(width / 2, height / 2, counter);
-      }
-    }
-
-    function drawCircle(x, y, d) {
-      ellipse(x, y, d, d);
-      if (d > 10) {
-        drawCircle(x - d / 2, y, d / 2);
-        drawCircle(x + d / 2, y, d / 2);
-        drawCircle(x, y + d / 2, d / 2);
-        // drawCircle(x, y - d / 2, d / 2);
-      }
-    }
-
-    // Initialize the canvas and animation
-    new p5();
-
-    // Add event listeners for the pause/play button
-    document.getElementById('pausePlayBtn').addEventListener('click', function () {
-      isPaused = !isPaused;
-      this.textContent = isPaused ? 'play animation' : 'pause animation';
-
-      if (!isPaused) {
-        loop();
-      } else {
-        noLoop();
-      }
-    });
-  </script>
-  <script>
-    window.addEventListener('scroll', function () {
-      const header = document.querySelector('.logo');
-      if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  </script>
-
 </body>
 
 </html>

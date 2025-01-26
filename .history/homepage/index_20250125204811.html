@@ -35,7 +35,6 @@
     canvas {
       min-width: 104%;
       min-height: 104%;
-      aspect-ratio: 16/9;
 
     }
 
@@ -261,7 +260,7 @@
         .logo {
           width: 100%;
           white-space: nowrap;
-          border-radius: 8px;
+          border-radius: 0;
           justify-content: center
         }
 
@@ -400,7 +399,7 @@
     let startTime;
 
     function setup() {
-      createCanvas((window.windowWidth * 1.2), (window.windowHeight * 1.2), P2D);
+      createCanvas((window.windowWidth * 1.1), (window.windowHeight * 1.1), P2D);
       startTime = millis();
     }
 

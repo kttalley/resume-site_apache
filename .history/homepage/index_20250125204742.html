@@ -35,7 +35,6 @@
     canvas {
       min-width: 104%;
       min-height: 104%;
-      aspect-ratio: 16/9;
 
     }
 
@@ -261,7 +260,7 @@
         .logo {
           width: 100%;
           white-space: nowrap;
-          border-radius: 8px;
+          border-radius: 0;
           justify-content: center
         }
 
@@ -360,13 +359,12 @@
   <!-- <div class="announcement">
     <h1>New portfolio app in progress, check back soon.</h1>
   </div> -->
-  <main class="headline" role="main" style="">
+  <main class="headline" role="main" style=""">
     <nav role=" navigation" id="globalnav">
-      <div class="logo" aria-label="site heading with author's name and role" role="heading"
-        style="margin-top: -140px;">
-        <h2>Kristian Talley</h2>
-        <h3>designer and developer</h3>
-      </div>
+    <div class="logo" aria-label="site heading with author's name and role" role="heading" style="margin-top: -140px;">
+      <h2>Kristian Talley</h2>
+      <h3>designer and developer</h3>
+    </div>
     </nav>
     <h1 role="heading" style="margin-top: 24px; margin-bottom: 24px;">I'm a designer with a passion for teaching
       JavaScript and generative
@@ -400,7 +398,7 @@
     let startTime;
 
     function setup() {
-      createCanvas((window.windowWidth * 1.2), (window.windowHeight * 1.2), P2D);
+      createCanvas((window.windowWidth * 1.1), (window.windowHeight * 1.1), P2D);
       startTime = millis();
     }
 
